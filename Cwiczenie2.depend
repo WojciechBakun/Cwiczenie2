@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1507485278 source:c:\users\wojci\desktop\programowanie obiektowe\cwiczenie2\main.cpp
+	<iostream>
+	<cstdlib>
+	<windows.h>
+
