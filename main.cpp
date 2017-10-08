@@ -4,8 +4,7 @@
 
 using namespace std;
 
-void gotoxy( int x, int y )
-  {
+void gotoxy( int x, int y ){
   COORD coord;
   coord.X = x;
   coord.Y = y;
@@ -22,38 +21,34 @@ int main()
     cin>>wiersze;
     cout<<endl<<"Podaj typ trojkata \n [1] - normalny \n [2] - z odstepami \n Twoj wybor: ";
     cin>>trojkat;
-    gotoxy(x,y);
 
     switch (trojkat){
     case 1:
         for(int i=0; i<wiersze; i++){
-        gotoxy(x,y);
-        for(int i = 0; i < gwiazdki; i++)
-        {
-            cout<<"*";
-        }
-        gwiazdki=gwiazdki+2;
-        x--;
-        y++;
+            gotoxy(x,y);
+            for(int i = 0; i < gwiazdki; i++){
+                cout<<"*";
+            }
+            gwiazdki=gwiazdki+2;
+            x--;
+            y++;
         }
         cout<<endl<<"Choinka sklada sie z "<<wiersze*(gwiazdki/2)<<" gwiazdek"<<endl;
         break;
     case 2:
         for(int i=0; i<wiersze; i++){
-        gotoxy(x,y);
-        for(int i = 0; i < gwiazdki; i++)
-        {
-            if(i%2==0){
-                cout<<"*";
-            } else {
-                cout<<" ";
-                nieparzyste++;
+            gotoxy(x,y);
+            for(int i = 0; i < gwiazdki; i++){
+                if(i%2==0){
+                    cout<<"*";
+                } else {
+                    cout<<" ";
+                    nieparzyste++;
+                }
             }
-
-        }
-        gwiazdki=gwiazdki+2;
-        x--;
-        y++;
+            gwiazdki=gwiazdki+2;
+            x--;
+            y++;
         }
         cout<<endl<<"Choinka sklada sie z "<<wiersze*(gwiazdki/2)-nieparzyste<<" gwiazdek"<<endl;
         break;
@@ -61,5 +56,4 @@ int main()
         cout<<"Nie ma takiego wyboru, prawidlowe opcje to [1] lub [2]!";
         break;
     }
-
 }
