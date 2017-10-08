@@ -17,7 +17,7 @@ void gotoxy( int x, int y )
 
 int main()
 {
-    int x=40, y=6, wiersze=10, gwiazdki=1, trojkat;
+    int x=40, y=6, wiersze=10, gwiazdki=1, trojkat, nieparzyste=0;
     cout<<"Podaj liczbe wierszy trojkata: ";
     cin>>wiersze;
     cout<<endl<<"Podaj typ trojkata \n [1] - normalny \n [2] - z odstepami \n Twoj wybor: ";
@@ -36,6 +36,7 @@ int main()
         x--;
         y++;
         }
+        cout<<endl<<"Choinka sklada sie z "<<wiersze*(gwiazdki/2)<<" gwiazdek"<<endl;
         break;
     case 2:
         for(int i=0; i<wiersze; i++){
@@ -44,16 +45,21 @@ int main()
         {
             if(i%2==0){
                 cout<<"*";
-            } else
+            } else {
                 cout<<" ";
+                nieparzyste++;
+            }
+
         }
         gwiazdki=gwiazdki+2;
         x--;
         y++;
         }
+        cout<<endl<<"Choinka sklada sie z "<<wiersze*(gwiazdki/2)-nieparzyste<<" gwiazdek"<<endl;
         break;
     default:
         cout<<"Nie ma takiego wyboru, prawidlowe opcje to [1] lub [2]!";
         break;
     }
+
 }
